@@ -1,0 +1,14 @@
+#!/bin/bash
+
+[[ -z $1 || ! -f $1 ]] && echo 'Please define param as valid backup file (production.sqlite3-YYYYMMDDHHMM)' && exit 1
+
+BACKUP_FILE=$1
+
+echo "Init docker variables"
+eval $(docker-machine env default)
+
+echo "Get docker id"
+DOCKER_ID=`docker ps | grep ticketmaster | awk '{ print $1 }'`
+
+echo "Restore ${BACKUP_FILE} to ${DOCKER_ID}:/techmaturity/db/production.sqlite3"
+docker cp ${BACKUP_FILE} ${DOCKER_ID}:/techmaturity/db/production.sqlite3
