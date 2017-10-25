@@ -24,6 +24,8 @@ Learn more about [Tech Maturity](https://tech.ticketmaster.com/2016/11/08/gettin
 2. run `docker run -p 3000:3000 ticketmaster/techmaturity:2.0.0`
 3. open up `http://localhost:3000` in your web browser 🚀
 
+If you want to backup your progress, run `bin/backup` to copy production.sqlite3 to your local directory.
+
 ----
 ## Contribution
 1. Fork the project

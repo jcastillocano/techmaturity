@@ -37,3 +37,6 @@ bower.json
 
 .idea
 .DS_Store
+
+# Backups
+production.sqlite3*
