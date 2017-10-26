@@ -6,5 +6,5 @@ eval $(docker-machine env default)
 echo "Get docker id"
 DOCKER_ID=`docker ps | grep ticketmaster | awk '{ print $1 }'`
 
-echo "Backup up ${DOCKER_ID} /techmaturity/db/production.sqlite3 database to production.sqlite3-$(date +%Y%M%d%H%M)"
-docker cp ${DOCKER_ID}:/techmaturity/db/production.sqlite3 production.sqlite3-$(date +%Y%M%d%H%M)
+echo "Backup up ${DOCKER_ID} /techmaturity/db/production.sqlite3 database to production.sqlite3-$(date +%Y%m%d%H%M)"
+docker cp ${DOCKER_ID}:/techmaturity/db/production.sqlite3 production.sqlite3-$(date +%Y%m%d%H%M)
